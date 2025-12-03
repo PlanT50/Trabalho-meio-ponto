@@ -18,7 +18,7 @@ public class HeapMinimo {
     private int dir(int i) {
         return 2 * i + 2;
     }
-
+    // Aqui ja se aplica a primeira reorganização para colocar o menor numero na raiz.
     public void inserir(int valor) {
         if (tamanho == heap.length) {
             throw new RuntimeException("Heap cheio");
@@ -35,7 +35,7 @@ public class HeapMinimo {
             i = pai(i);
         }
     }
-
+    // E aqui quando se extrai os filhos devem ser reorganizados de acordo com o numero substituto.
     public int extrairMinimo() {
         if (tamanho <= 0) {
             throw new RuntimeException("Heap vazio");
